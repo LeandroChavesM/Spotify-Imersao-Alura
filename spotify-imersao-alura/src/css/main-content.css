@@ -259,7 +259,6 @@
   border-radius: 8px;
   -ms-flex: 1;
   flex: 1;
-  isolation: isolate;
   padding: 16px;
   position: relative;
   transition: background-color 0.3s ease;
@@ -271,16 +270,14 @@
 }
 
 .card-img {
-  padding-bottom: 100%;
-  position: relative;
   width: 100%;
-  margin-bottom: 16px;
+  height: auto;
+  object-fit: cover;
 }
 
 .artist-img {
   height: 100%;
   left: 0;
-  position: absolute;
   top: 0;
   width: 100%;
   border-radius: 50%;
@@ -334,7 +331,7 @@
 
 .artist-card:hover .play .fa-play {
   opacity: 1;
-  transform: translateY(-20px);
+  transform: translateY(-150px);
 }
 
 .play .fa-play:hover {
@@ -343,7 +340,38 @@
 }
 
 #result-artist {
+  display: flex;
   padding: 20px 40px;
+  flex-wrap: wrap;
+  max-height: 55vh;
+  overflow-y: auto;
 }
 
 /* FIM CARD ARTISTA */
+
+/* Tamanho da barra de rolagem */
+#result-artist::-webkit-scrollbar {
+  width: 8px;
+  /* Largura para scroll vertical */
+  height: 8px;
+  /* Altura para scroll horizontal */
+}
+
+/* Cor de fundo da barra */
+#result-artist::-webkit-scrollbar-track {
+  background: transparent;
+  /* Cor do fundo */
+  border-radius: 4px;
+}
+
+/* Cor da barra de rolagem */
+#result-artist::-webkit-scrollbar-thumb {
+  background: transparent;
+  /* Cor do scroll */
+  border-radius: 4px;
+}
+
+/* Hover no scroll */
+#result-artist::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
